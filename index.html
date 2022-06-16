@@ -7,9 +7,10 @@
 <title>Smart Layer Popup</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/img/favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/css/font.css">
-<link rel="stylesheet" href="../css/highlight-material-11.4.0.min.css">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/highlight-material-11.4.0.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 <a href="#container" class="skip-content">콘텐츠로 바로 이동</a>
 <div class="sp-wrap">
@@ -20,18 +21,20 @@
 	</header>
 	<section class="container" id="container">
 		<dl class="list-pop">
-			<dt><strong class="point">1. a 태그로 적용하는 경우</strong>연결할 팝업의 ID값을 href에 설정</dt>
+			<dt>1. a 태그로 적용하는 경우</dt>
 			<dd>
-				<a href="#POP-1" class="btn-default btn-pop">#POP-1 열기</a>
+				<p class="guide">연결할 팝업의 ID값을 href에 설정</p>
+				<a href="#SMARTpop-1" class="btn-default btn-smartpop">#SMARTpop-1 열기</a>
 				<div class="code-wrap">
-					<pre><code class="html">&lt;a href="#POP-1" class="btn-pop"&gt;#POP-1&lt;/a&gt;</code></pre>
+					<pre><code class="html">&lt;a href="#SMARTpop-1" class="your-class"&gt;#SMARTpop-1 열기&lt;/a&gt;</code></pre>
 				</div>
 			</dd>
-			<dt><strong class="point">2. button 태그로 적용하는 경우</strong>연결할 팝업의 ID값을 data-popup에 설정</dt>
+			<dt>2. button 태그로 적용하는 경우</dt>
 			<dd>
-				<button type="button" class="btn-default btn-pop" data-popup="#POP-2">#POP-2 열기</button>
+				<p class="guide">연결할 팝업의 ID값을 data-smartpop에 설정</p>
+				<button type="button" class="btn-default btn-smartpop" data-smartpop="#SMARTpop-2">#SMARTpop-2 열기</button>
 				<div class="code-wrap">
-					<pre><code class="html">&lt;button type="button" class="btn-pop" data-popup="#POP-2"&gt;#POP-2&lt;/button&gt;</code></pre>
+					<pre><code class="html">&lt;button type="button" class="your-class" data-smartpop="#SMARTpop-2"&gt;#SMARTpop-2 열기&lt;/button&gt;</code></pre>
 				</div>
 			</dd>
 		</dl>
@@ -47,31 +50,27 @@
 		<address class="copyright">&copy; JW</address>
 	</footer>
 </div>
-<div id="POP-1" class="smart-pop" style="display:none;">
+<div id="SMARTpop-1" class="smart-pop" style="display:none;">
 	<div class="pop-layer">
-		<span class="pop-txt">#POP-1 입니다.</span>
+		<span class="pop-txt">#SMARTpop-1 입니다.</span>
 		<button type="button" class="btn-close">팝업 닫기</button>
 	</div>
 </div>
-<div id="POP-2" class="smart-pop" style="display:none;">
+<div id="SMARTpop-2" class="smart-pop" style="display:none;">
 	<div class="pop-layer">
-		<span class="pop-txt">#POP-2 입니다.</span>
+		<span class="pop-txt">#SMARTpop-2 입니다.</span>
 		<button type="button" class="btn-close">팝업 닫기</button>
 	</div>
 </div>
-<script src="../js/highlight-8.7.min.js"></script>
+<script src="js/highlight-8.7.min.js"></script>
 <script src="smartpop.js"></script>
 <script>
 hljs.initHighlightingOnLoad();
 
-var sp = new SmartPop({
-	//Required
-	btnClass: 'btn-pop',
-	popClass: 'smart-pop',
-
+document.querySelectorAll('.btn-smartpop').smartPop({
 	//Optional
-	popClose: 'btn-close'
-	// cssModeClass: 'on'
+	//popClose: 'btn-close',
+	//cssModeClass: 'on'
 });
 </script>
 </body>

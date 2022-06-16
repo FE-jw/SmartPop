@@ -5,22 +5,27 @@
  * Released: 
 */
 
-function SmartPop(options){
-	var btns = document.getElementsByClassName(options.btnClass);
+function smartPop(options){
+	var smart_btns = options.btns;
 
-	for(var idx = 0; idx < btns.length; idx++){
-		btns[idx].addEventListener('click', function(e){
+	for(var idx = 0; idx < smart_btns.length; idx++){
+		smart_btns[idx].addEventListener('click', function(e){
 			var original_btn = this;
-			var pop_id = (this.hash || this.dataset.popup).replace('#', '');
+			var pop_id = (this.hash || this.dataset.smartpop).replace('#', '');
 			var pop = document.getElementById(pop_id);
 			var tag = this.tagName.toLowerCase();
+
 			if(tag === 'a'){
 				e.preventDefault();
 			}
 
 			//Open
 			function openPop(){
-				pop.style.display = 'block';
+				if(options.cssModeClass){
+					pop.classList.add(options.cssModeClass);
+				}else{
+					pop.style.display = 'block';
+				}
 				
 				//Keyboard Accessibility
 				pop.style.outline = 'none';
@@ -31,7 +36,13 @@ function SmartPop(options){
 			//Close
 			function closePop(){
 				pop.removeAttribute('tabindex');
-				pop.style.display = 'none';
+
+				if(options.cssModeClass){
+					pop.classList.remove(options.cssModeClass);
+				}else{
+					pop.style.display = 'none';
+				}
+				
 				pop.style.outline = '';
 				original_btn.focus();
 			}
@@ -51,6 +62,7 @@ function SmartPop(options){
 
 				//Prevent the popup from losing focus before it closes
 				pop.querySelector('.' + btn_close).addEventListener('keydown', function(k_2){
+					//Tab
 					if(k_2.keyCode == 9){
 						k_2.preventDefault();
 						pop.focus();
@@ -62,3 +74,13 @@ function SmartPop(options){
 		});
 	}
 }
+
+NodeList.prototype.smartPop = function(options){
+	var settings = {
+		btns: this,
+		popClose: typeof options !== 'undefined' ? options.popClose : 'btn-close',
+		cssModeClass: typeof options !== 'undefined' ? options.cssModeClass : ''
+	};
+
+	smartPop(settings);
+};
