@@ -1,36 +1,37 @@
 @charset "utf-8";
 
 /*! Author: JW 2022-##-## */
-@font: 'Roboto-Regular', 'NanumSquareR', sans-serif;
-@font-light: 'Roboto-Light', 'NanumSquareL', sans-serif;
-@font-bold: 'Roboto-Bold', 'NanumSquareExtraBold', sans-serif;
-@symbol-dark: #333;
-@symbol-color: #4169e1; //rgb(65, 105, 225)
-//@cdn: 'https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop';
-@cdn: '../img';
-@import 'svg.less';
+$font: 'Roboto-Regular', 'NanumSquareR', sans-serif;
+$font-light: 'Roboto-Light', 'NanumSquareL', sans-serif;
+$font-bold: 'Roboto-Bold', 'NanumSquareExtraBold', sans-serif;
+$symbol-dark: #333;
+$symbol-color: #4169e1; //rgb(65, 105, 225)
+$cdn: 'https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop';
+//$cdn: '../img';
+@import 'svg.scss';
 
 *	{margin:0;padding:0;}
 html	{height:100%;font-size:10px;-webkit-text-size-adjust:none;}
-body	{height:100%;line-height:1.2;font-size:2.0rem;font-family:@font;color:#000;-webkit-overflow-scrolling:touch;}
-h1, h2, h3, h4, h5, h6, strong, dt	{font-family:@font-bold;font-weight:normal;}
+body	{height:100%;line-height:1.2;font-size:2.0rem;font-family:$font;color:#000;-webkit-overflow-scrolling:touch;}
+h1, h2, h3, h4, h5, h6, strong, dt	{font-family:$font-bold;font-weight:normal;}
 a	{color:inherit;text-decoration:none;}
 button	{line-height:inherit;font-family:inherit;font-size:inherit;color:inherit;border:none;background-color:transparent;cursor:pointer;}
 li, dd	{list-style:none;}
 .flex_item	{display:block;width:100%;}
 .skip-content	{position:absolute;left:0;top:-100px;}
-.skip-content:focus	{display:block;width:100%;top:0;line-height:50px;font-weight:bold;color:#fff;text-align:center;background-color:@symbol-color;z-index:1000;}
+.skip-content:focus	{display:block;width:100%;top:0;line-height:50px;font-weight:bold;color:#fff;text-align:center;background-color:$symbol-color;z-index:1000;}
 
 //Default Mobile
-.sp-wrap	{display:flex;flex-direction:column;min-width:360px;height:100%;
+.sp-wrap	{display:flex;flex-direction:column;min-width:320px;height:100%;
 	//Common
-	.btn-default	{display:inline-block;padding:10px;border-radius:0.25em;line-height:1.2;font-size:1.6rem;color:#fff;background-color:@symbol-color;vertical-align:top;}
-	.code-wrap	{border:1px solid @symbol-color;border-radius:0.3em;background-color:@symbol-dark;}
+	.btn-default	{display:inline-block;padding:10px;border-radius:0.25em;line-height:1.2;font-size:1.6rem;color:#fff;background-color:$symbol-color;vertical-align:top;}
+	.code-wrap	{border:1px solid $symbol-color;border-radius:0.3em;background-color:$symbol-dark;}
+	.code-wrap ~ .code-wrap	{margin-top:10px;}
 
 	//Header
-	.header	{border-bottom:1px solid @symbol-color;}
+	.header	{border-bottom:1px solid $symbol-color;}
 	.header .header-wrap	{padding:10px 20px;}
-	.header .main-tit	{font-size:3.0rem;color:@symbol-color;}
+	.header .main-tit	{font-size:3.0rem;color:$symbol-color;}
 
 	//Container
 	.container	{flex:1;}
@@ -40,13 +41,16 @@ li, dd	{list-style:none;}
 	.container .list-pop dt .point	{display:block;margin-bottom:5px;}
 	.container .list-pop .guide	{margin-bottom:10px;font-size:1.5rem;}
 	.container .list-pop .code-wrap	{margin-top:10px;padding:12px;font-size:1.2rem;}
-	.container .features	{padding:0 20px;}
-	.container .features dt	{margin-bottom:0.5em;font-family:@font-bold;font-size:1.5rem;}
+	.container .features	{padding:20px;}
+	.container .features dt	{margin-bottom:0.5em;font-family:$font-bold;font-size:1.5rem;}
 	.container .features dd	{padding-left:1em;line-height:1.5;font-size:1.4rem;text-indent:-1em;}
+	.container .get-started	{padding:20px;}
+	.container .get-started .tit-use	{margin-bottom:10px;font-size:2.8rem;color:$symbol-color;}
+	.container .get-started .code-wrap	{padding:12px;font-size:1.2rem;}
 
 	//Footer
 	.footer	{padding:40px 0 20px;
-		.copyright	{font-family:@font-light;line-height:1;font-style:normal;font-size:1.2rem;text-align:center;color:@symbol-dark;}
+		.copyright	{font-family:$font-light;line-height:1;font-style:normal;font-size:1.2rem;text-align:center;color:$symbol-dark;}
 	}
 
 }
@@ -56,7 +60,7 @@ li, dd	{list-style:none;}
 .smart-pop:before	{content:'';display:inline-block;height:100%;vertical-align:middle;}
 .smart-pop .pop-layer	{display:inline-block;width:300px;height:200px;margin:30px 0;position:relative;border-radius:0.3em;font-size:2.0rem;vertical-align:middle;background-color:#fff;}
 .smart-pop .pop-txt	{display:flex;justify-content:center;align-items:center;width:100%;height:100%;padding:20px 40px;box-sizing:border-box;}
-.smart-pop .btn-close	{width:40px;height:40px;position:absolute;right:0;top:0;font:0/0 a;background:url("@{btn-close}") no-repeat;background-size:100% 100%;}
+.smart-pop .btn-close	{width:40px;height:40px;position:absolute;right:0;top:0;font:0/0 a;background:url("#{$btn-close}") no-repeat;background-size:100% 100%;}
 
 //Tablet
 @media all and (min-width: 768px) and (max-width:1439px){
@@ -77,9 +81,12 @@ li, dd	{list-style:none;}
 		.container .list-pop dt .point	{margin-bottom:10px;font-size:2.0rem;}
 		.container .list-pop .guide	{margin-bottom:15px;font-size:1.8rem;}
 		.container .list-pop .code-wrap	{margin-top:20px;padding:15px;font-size:1.5rem;}
-		.container .features	{padding:0 30px;}
+		.container .features	{padding:30px;}
 		.container .features dt	{font-size:1.7rem;}
 		.container .features dd	{font-size:1.6rem;}
+		.container .get-started	{padding:30px;}
+		.container .get-started .tit-use	{margin-bottom:15px;font-size:3.2rem;}
+		.container .get-started .code-wrap	{padding:15px;font-size:1.5rem;}
 	}
 
 	//SmartPop
@@ -108,9 +115,12 @@ li, dd	{list-style:none;}
 		.container .list-pop dt .point	{margin-bottom:10px;font-size:2.4rem;}
 		.container .list-pop .guide	{margin-bottom:20px;font-size:2.0rem;}
 		.container .list-pop .code-wrap	{margin-top:20px;padding:18px;font-size:1.8rem;}
-		.container .features	{padding:0 30px;}
+		.container .features	{padding:30px;}
 		.container .features dt	{font-size:1.9rem;}
 		.container .features dd	{font-size:1.8rem;}
+		.container .get-started	{padding:30px;}
+		.container .get-started .tit-use	{margin-bottom:20px;font-size:3.6rem;}
+		.container .get-started .code-wrap	{padding:18px;font-size:1.8rem;}
 
 		//Footer
 		.footer	{padding:60px 0 30px;

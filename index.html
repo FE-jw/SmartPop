@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/img/favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/css/font.css">
 <link rel="stylesheet" href="css/highlight-material-11.4.0.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 					<pre><code class="html">&lt;a href="#SMARTpop-1" class="your-class"&gt;#SMARTpop-1 열기&lt;/a&gt;</code></pre>
 				</div>
 			</dd>
-			<dt>2. button 태그로 적용하는 경우</dt>
+			<dt>2. button 태그로 적용하는 경우(다른 태그도 가능)</dt>
 			<dd>
 				<p class="guide">연결할 팝업의 ID값을 data-smartpop에 설정</p>
 				<button type="button" class="btn-default btn-smartpop" data-smartpop="#SMARTpop-2">#SMARTpop-2 열기</button>
@@ -38,12 +38,25 @@
 				</div>
 			</dd>
 		</dl>
+		<div class="get-started">
+			<h2 class="tit-use">Get Started</h2>
+			<div class="code-wrap">
+				<pre><code class="html">&lt;script src="<a href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop/smartPop.js" target="_blank">https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop/smartPop.js</a>"&gt;&lt;/script&gt;</code></pre>
+			</div>
+			<div class="code-wrap">
+				<pre><code class="javascript">document.querySelectorAll('.your-class').smartPop({
+	//option
+	popClose: 'your-close',	//닫기 버튼 class명(기본값은 btn-close)
+	cssModeClass: 'on'	//팝업 none or block class명(옵션을 적지 않을 경우 style 속성으로 none/block 처리)
+});</code></pre>
+			</div>
+		</div>
 		<dl class="features">
 			<dt>특징</dt>
 			<dd>1. ESC key를 눌러 팝업을 닫을 수 있다.</dd>
 			<dd>2. 팝업을 열면 포커스가 팝업으로 이동하여 정보의 순서가 자연스럽다.</dd>
-			<dd>3. 닫기 버튼에서 실수로 Tab key를 눌렀을 때 다시 팝업으로 포커스가 이동한다. (키보드 이용자가 실수로 팝업을 닫지 못하는 것을 방지한다.)</dd>
-			<dd>4. 팝업을 닫으면 눌렀던 버튼으로 포커스가 이동하여 이어서 정보를 탐색할 수 있다.</dd>
+			<dd>3. 닫기 버튼에서 실수로 Tab key를 눌렀을 때 다시 팝업으로 포커스가 이동하여 팝업을 닫기 전 포커스 이탈을 방지한다.</dd>
+			<dd>4. 팝업을 닫으면 눌렀던 버튼으로 포커스가 이동하여 정보를 이어서 탐색할 수 있다.</dd>
 		</dl>
 	</section>
 	<footer class="footer">
@@ -63,15 +76,11 @@
 	</div>
 </div>
 <script src="js/highlight-8.7.min.js"></script>
-<script src="smartpop.js"></script>
+<script src="smartPop.js"></script>
 <script>
 hljs.initHighlightingOnLoad();
 
-document.querySelectorAll('.btn-smartpop').smartPop({
-	//Optional
-	//popClose: 'btn-close',
-	//cssModeClass: 'on'
-});
+document.querySelectorAll('.btn-smartpop').smartPop();
 </script>
 </body>
 </html>
