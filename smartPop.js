@@ -1,28 +1,35 @@
 /**
- * Version: 1
- * Web: 
- * Github: https://github.com/FE-jw/smartPop
- * Released: 
-*/
+ * @author JW <zaixu91@gmail.com>
+ * @tutorial https://github.com/FE-jw/smartPop
+ * @version 1
+ * @Released 2022-##-##
+ */
 
-function smartPop(options){
-	var smart_btns = options.btns;
+NodeList.prototype.smartPop = function(options){
+	if(window.NodeList && !NodeList.prototype.forEach){
+		NodeList.prototype.forEach = Array.prototype.forEach;
+	}
 
-	for(var idx = 0; idx < smart_btns.length; idx++){
-		smart_btns[idx].addEventListener('click', function(e){
-			var original_btn = this;
-			var pop_id = (this.hash || this.dataset.smartpop).replace('#', '');
+	var settings = {
+		btns: this,
+		popClose: typeof options !== 'undefined' ? options.popClose : 'btn-close',
+		cssModeClass: typeof options !== 'undefined' ? options.cssModeClass : ''
+	};
+
+	var onInit = function(){
+		settings.btns.forEach(function(e){
+			var pop_id = (e.hash || e.dataset.smartpop).replace('#', '');
 			var pop = document.getElementById(pop_id);
-			var tag = this.tagName.toLowerCase();
-
-			if(tag === 'a'){
-				e.preventDefault();
-			}
+			var tag = e.tagName.toLowerCase();
 
 			//Open
-			function openPop(){
-				if(options.cssModeClass){
-					pop.classList.add(options.cssModeClass);
+			function openPop(e){
+				if(tag === 'a'){
+					e.preventDefault();
+				}
+
+				if(settings.cssModeClass){
+					pop.classList.add(settings.cssModeClass);
 				}else{
 					pop.style.display = 'block';
 				}
@@ -37,18 +44,18 @@ function smartPop(options){
 			function closePop(){
 				pop.removeAttribute('tabindex');
 
-				if(options.cssModeClass){
-					pop.classList.remove(options.cssModeClass);
+				if(settings.cssModeClass){
+					pop.classList.remove(settings.cssModeClass);
 				}else{
 					pop.style.display = 'none';
 				}
 				
 				pop.style.outline = '';
-				original_btn.focus();
+				e.focus();
 			}
 
 			//Close Popup
-			var btn_close = options.popClose || 'btn-close';
+			var btn_close = settings.popClose || 'btn-close';
 			pop.querySelector('.' + btn_close).addEventListener('click', function(){
 				closePop();
 			});
@@ -70,17 +77,12 @@ function smartPop(options){
 				});
 			});
 
-			openPop();
+			//Pop Open
+			e.addEventListener('click', function(e){
+				openPop(e);
+			});
 		});
-	}
-}
-
-NodeList.prototype.smartPop = function(options){
-	var settings = {
-		btns: this,
-		popClose: typeof options !== 'undefined' ? options.popClose : 'btn-close',
-		cssModeClass: typeof options !== 'undefined' ? options.cssModeClass : ''
 	};
 
-	smartPop(settings);
+	onInit();
 };
