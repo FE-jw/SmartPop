@@ -1,16 +1,20 @@
-# **Smart Layer Popup(개발중)**
+![Smart Layer Popup](/img/SP_logo.jpg)
 
-스마트한 레이어 팝업 플러그인  
-요소 클릭 시 특정 팝업을 노출시킬 때 유용하다.
+# **Smart Layer Popup**
+
+This is a smart layer popup plugin.  
+It is useful to expose a particular layer popup when clicking an element.
+
+---
 
 ## **How To Use**
 
-1. a 태그로 적용하는 경우: 연결할 팝업의 ID값을 href에 설정
+1. When applying as a tag: set the ID value of the popup to be connected to href
 	```html
 	<a href="#SMARTpop-1" class="your-class">...</a>
 	```
 
-2. button 태그로 적용하는 경우: 연결할 팝업의 ID값을 data-smartpop에 설정(다른 태그도 가능)
+2. When applying as a button tag: set the ID value of the popup to be connected to data-smartpop _(other tags are also possible)_
 	```html
 	<button type="button" class="your-class" data-smartpop="#SMARTpop-2">...</button>
 	```
@@ -18,21 +22,25 @@
 ## **Get Stated**
 
 ```html
+<!-- Don't add my CDN in your project. I recommend adding it to your CDN -->
 <script src="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop/smartPop.js"></script>
 ```
 
 ```javascript
 document.querySelectorAll('.your-class').smartPop({
 	//option
-	popClose: 'your-close',	//닫기 버튼 class명(기본값은 btn-close)
-	cssModeClass: 'on'	//팝업 none or block class명(옵션을 적지 않을 경우 style 속성으로 none/block 처리)
+	popClose: 'your-close',	//Close button class name (default is btn-close)
+	cssModeClass: 'on'	//Popup none or block class name (if you do not write down the option, handle none/block with style property)
 });
 ```
 
 ## **Features**
-1. ESC key를 눌러 팝업을 닫을 수 있다.
-2. 팝업을 열면 포커스가 팝업으로 이동하여 정보의 순서가 자연스럽다.
-3. 닫기 버튼에서 실수로 Tab key를 눌렀을 때 다시 팝업으로 포커스가 이동하여 팝업을 닫기 전 포커스 이탈을 방지한다.
-4. 팝업을 닫으면 눌렀던 버튼으로 포커스가 이동하여 정보를 이어서 탐색할 수 있다.
+* It is very easy to expose the layer popup.
+* When you open the popup, the focus moves to the popup, making the information search order natural.
+* You can close the popup by pressing ESC key.
+* When the TAB key is pressed by mistake from the close button, the focus moves back to the popup to prevent losing focus before closing the popup.
+* When you close the popup, the focus moves to the button you pressed, allowing you to continue searching for information.
 
 ## **Change Log**
+* 22####
+	* Released Ver 1

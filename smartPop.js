@@ -2,7 +2,7 @@
  * @author JW <zaixu91@gmail.com>
  * @tutorial https://github.com/FE-jw/smartPop
  * @version 1
- * @Released 2022-##-##
+ * @released 2022-##-##
  */
 
 NodeList.prototype.smartPop = function(options){
