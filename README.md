@@ -1,6 +1,6 @@
 ![Smart Layer Popup](/img/SP_logo.jpg)
 
-# **Smart Layer Popup**
+# **Smart Layer Popup [Demo](https://fe-jw.github.io/smartPop)**
 
 This is a smart layer popup plugin.  
 It is useful to expose a particular layer popup when clicking an element.
@@ -27,8 +27,8 @@ It is useful to expose a particular layer popup when clicking an element.
 ```
 
 ```javascript
+//Be sure to use querySelectorAll()
 document.querySelectorAll('.your-class').smartPop({
-	//option
 	popClose: 'your-close',	//Close button class name (default is btn-close)
 	cssModeClass: 'on'	//Popup none or block class name (if you do not write down the option, handle none/block with style property)
 });

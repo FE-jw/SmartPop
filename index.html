@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
 <title>Smart Layer Popup</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/img/favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/css/font.css">
 <link rel="stylesheet" href="css/highlight-material-11.4.0.min.css">
 <link rel="stylesheet" href="css/style.min.css">
@@ -56,10 +55,9 @@
 					<li data-sta>
 						<h3 class="step-tit">Add Markup</h3>
 						<div class="code-wrap">
-							<pre><code class="html">&lt;!-- Applying as a tag: set the ID value of the popup to be connected to href --&gt;</code></pre>
+							<!-- <pre><code class="html">&lt;!-- Applying as a tag: set the ID value of the popup to be connected to href --&gt;</code></pre> -->
 							<pre><code class="html">&lt;a href="#SMARTpop-1" class="your-class"&gt;...&lt;/a&gt;</code></pre>
-							<br>
-							<pre><code class="html">&lt;!-- Applying as a button tag: set the ID value of the popup to be connected to data-smartpop --&gt;</code></pre>
+							<!-- <pre><code class="html">&lt;!-- Applying as a button tag: set the ID value of the popup to be connected to data-smartpop --&gt;</code></pre> -->
 							<pre><code class="html">&lt;button class="your-class" data-smartpop="#SMARTpop-2"&gt;...&lt;/button&gt;</code></pre>
 						</div>
 					</li>
@@ -73,8 +71,8 @@
 					<li data-sta>
 						<h3 class="step-tit">Initialize</h3>
 						<div class="code-wrap">
-							<pre><code class="javascript">document.querySelectorAll('.your-class').smartPop({
-	//option
+							<pre><code class="javascript">//Be sure to use querySelectorAll()
+document.querySelectorAll('.your-class').smartPop({
 	popClose: 'your-close',	//Close button class name (default is btn-close)
 	cssModeClass: 'on'	//Popup none or block class name (if you do not write down the option, handle none/block with style property)
 });</code></pre>
@@ -93,13 +91,13 @@
 <div id="SMARTpop-1" class="smart-pop" style="display:none;">
 	<div class="pop-layer">
 		<span class="pop-txt">#SMARTPOP-1.<br><br>Continue pressing<br>the Tab key.<br>You don't lose focus<br>on the popup<br>until you close it.<br><br>Pressing the ESC key<br>closes the popup.</span>
-		<button type="button" class="btn-close">팝업 닫기</button>
+		<button type="button" class="btn-close">Close Popup</button>
 	</div>
 </div>
 <div id="SMARTpop-2" class="smart-pop" style="display:none;">
 	<div class="pop-layer">
 		<span class="pop-txt">#SMARTPOP-2.<br><br>Continue pressing<br>the Tab key.<br>You don't lose focus<br>on the popup<br>until you close it.<br><br>Pressing the ESC key<br>closes the popup.</span>
-		<button type="button" class="btn-close">팝업 닫기</button>
+		<button type="button" class="btn-close">Close Popup</button>
 	</div>
 </div>
 <script src="js/highlight-8.7.min.js"></script>
@@ -111,7 +109,12 @@ hljs.initHighlightingOnLoad();
 document.querySelectorAll('.btn-smartpop').smartPop();
 
 window.addEventListener('load', function(){
-	document.querySelectorAll('[data-sta]').STA();
+	//Loading
+	setTimeout(function(){
+		window.scrollTo(0, 0);
+		document.body.classList.add('onLoad');
+		document.querySelectorAll('[data-sta]').STA();
+	}, 500);
 });
 
 document.querySelector('.btn-top').addEventListener('click', function(){

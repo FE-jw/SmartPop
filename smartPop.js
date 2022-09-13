@@ -1,9 +1,9 @@
 /**
- * @author JW <zaixu91@gmail.com>
- * @tutorial https://github.com/FE-jw/smartPop
- * @version 1
- * @released 2022-##-##
- */
+ * Version: 1
+ * Web: https://fe-jw.github.io/smartPop
+ * Github: https://github.com/FE-jw/smartPop
+ * Released: 2022-##-##
+*/
 
 NodeList.prototype.smartPop = function(options){
 	if(window.NodeList && !NodeList.prototype.forEach){

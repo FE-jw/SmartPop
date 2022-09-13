@@ -7,13 +7,13 @@ $font-bold: 'Roboto-Bold', 'NanumSquareExtraBold', sans-serif;
 $symbol-dark: #333;
 $symbol-color: #4169e1; //rgb(65, 105, 225)
 $symbol-grey: #777;
-$cdn: 'https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop';
-// $cdn: '../img';
+// $cdn: 'https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop';
+$cdn: '../img';
 @import '_svg.scss';
 
 *	{margin:0;padding:0;}
 html	{height:100%;font-size:10px;-webkit-text-size-adjust:none;}
-body	{height:100%;line-height:1.2;font-size:2.0rem;font-family:$font;color:#fff;background-color:#141414;-webkit-overflow-scrolling:touch;}
+body	{height:100%;line-height:1.2;font-size:2.0rem;font-family:$font;color:#fff;background-color:#000;-webkit-overflow-scrolling:touch;}
 h1, h2, h3, h4, h5, h6, strong, dt	{font-family:$font-bold;font-weight:normal;}
 a	{color:inherit;text-decoration:none;}
 button	{line-height:inherit;font-family:inherit;font-size:inherit;color:inherit;border:none;background-color:transparent;cursor:pointer;}
@@ -25,11 +25,27 @@ li, dd	{list-style:none;}
 ::-webkit-scrollbar	{width:4px;height:2px;background-color:rgba(255, 255, 255, 0.05);}
 ::-webkit-scrollbar-thumb	{background-color:$symbol-color;}
 
+//Loading
+body	{
+	&:after	{content:'';width:60px;height:60px;margin-top:-30px;margin-left:-30px;position:fixed;left:50%;top:50%;background:url("#{$loading}") no-repeat;background-size:100% 100%;z-index:1000;animation:loading 3s linear infinite;}
+	.header,
+	.container,
+	.footer	{visibility:hidden;}
+	
+	&.onLoad	{
+		&:after	{visibility:hidden;animation:none;}
+		.sp-wrap:before	{opacity:0.15;transition:opacity 1s ease;}
+		.header,
+		.container,
+		.footer	{visibility:initial;}
+	}
+}
+
 //Default Mobile
 .sp-wrap	{overflow:hidden;min-width:360px;
 	br[data-break-2]	{display:none;}
 	br[data-break-1]	{display:block;}
-	// &:before	{content:'';opacity:0.2;width:100vw;height:100vh;position:fixed;left:0;top:0;background:url('#{$cdn}/bg_sta.jpg') repeat 50% 50%;background-size:960px auto;z-index:-10;}
+	&:before	{content:'';opacity:0;width:100vw;height:100vh;position:fixed;left:0;top:0;background:url('#{$cdn}/bg_sp.jpg') repeat 50% 50%;background-size:960px auto;z-index:-10;}
 	.point	{color:$symbol-color;}
 
 	.link-default	{display:flex;justify-content:center;align-items:center;width:160px;height:45px;margin:0 auto;padding:0 10px;border-width:1px;border-style:solid;border-color:#fff;font-family:$font-light;font-size:1.5rem;text-align:center;background-color:rgba(255, 255, 255, 0.1);transition:all 0.5s ease;box-sizing:border-box;
@@ -162,4 +178,9 @@ li, dd	{list-style:none;}
 	.smart-pop .pop-layer	{width:400px;font-size:2.4rem;}
 	.smart-pop .pop-txt	{padding:30px 50px;}
 	.smart-pop .btn-close	{width:50px;height:50px;}
+}
+
+@keyframes loading	{
+	from	{transform:rotate(0);}
+	to	{transform:rotate(360deg);}
 }
