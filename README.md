@@ -19,7 +19,7 @@ It is useful to expose a particular layer popup when clicking an element.
 	<button type="button" class="your-class" data-smartpop="#SMARTpop-2">...</button>
 	```
 
-## **Get Stated**
+## **Get Started**
 
 ```html
 <!-- Don't add my CDN in your project. I recommend adding it to your CDN -->
