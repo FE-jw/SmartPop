@@ -42,5 +42,5 @@ document.querySelectorAll('.your-class').smartPop({
 * When you close the popup, the focus moves to the button you pressed, allowing you to continue searching for information.
 
 ## **Change Log**
-* 22####
+* 220916
 	* Released Ver 1

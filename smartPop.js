@@ -2,7 +2,7 @@
  * Version: 1
  * Web: https://fe-jw.github.io/smartPop
  * Github: https://github.com/FE-jw/smartPop
- * Released: 2022-##-##
+ * Released: 2022-09-16
 */
 
 NodeList.prototype.smartPop = function(options){
