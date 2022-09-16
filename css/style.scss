@@ -7,8 +7,8 @@ $font-bold: 'Roboto-Bold', 'NanumSquareExtraBold', sans-serif;
 $symbol-dark: #333;
 $symbol-color: #4169e1; //rgb(65, 105, 225)
 $symbol-grey: #777;
-// $cdn: 'https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop';
-$cdn: '../img';
+$cdn: 'https://cdn.jsdelivr.net/gh/fe-jw/smartPop/img';
+// $cdn: '../img';
 @import '_svg.scss';
 
 *	{margin:0;padding:0;}
