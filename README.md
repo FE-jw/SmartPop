@@ -23,7 +23,7 @@ It is useful to expose a particular layer popup when clicking an element.
 
 ```html
 <!-- Don't add my CDN in your project. I recommend adding it to your CDN -->
-<script src="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/smartPop/smartPop.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/smartPop.min.js"></script>
 ```
 
 ```javascript
