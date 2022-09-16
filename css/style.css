@@ -33,6 +33,7 @@ body.onLoad .container, body.onLoad .footer, body.onLoad .header	{visibility:ini
 .sp-wrap .header .main-tit .point	{display:block;font-size:5rem;}
 .sp-wrap .header .main-tit .name	{display:block;font-size:2.8rem;}
 .sp-wrap .header .main-tit .ver	{padding:5px 10px;position:absolute;left:0;top:0;border:1px solid #000;font-size:1rem;color:#000;white-space:nowrap;background-color:#4169e1;transform:translate(-1px,-120%);}
+.sp-wrap .header .main-tit.sta-complete	{animation:twinkle 1.5s alternate infinite linear;}
 .sp-wrap .header .main-desc	{margin-top:25px;font-family:"Roboto-Light","NanumSquareL",sans-serif;}
 .sp-wrap .header .main-desc .desc	{display:block;}
 .sp-wrap .header .main-desc .desc:first-child	{margin-bottom:20px;}
@@ -112,3 +113,5 @@ body.onLoad .container, body.onLoad .footer, body.onLoad .header	{visibility:ini
 .smart-pop .btn-close	{width:50px;height:50px;}}
 @keyframes loading	{from	{transform:rotate(0);}
 to	{transform:rotate(360deg);}}
+@keyframes twinkle	{from	{color:#fff;}
+to	{color:#4169e1;}}

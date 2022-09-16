@@ -59,6 +59,7 @@ body	{
 		.main-tit .point	{display:block;font-size:5.0rem;}
 		.main-tit .name	{display:block;font-size:2.8rem;}
 		.main-tit .ver	{padding:5px 10px;position:absolute;left:0;top:0;border:1px solid #000;font-size:1.0rem;color:#000;white-space:nowrap;background-color:$symbol-color;transform:translate(-1px, -120%);}
+		.main-tit.sta-complete	{animation:twinkle 1.5s alternate infinite linear;}
 		.main-desc	{margin-top:25px;font-family:$font-light;}
 		.main-desc .desc	{display:block;}
 		.main-desc .desc:first-child	{margin-bottom:20px;}
@@ -183,4 +184,9 @@ body	{
 @keyframes loading	{
 	from	{transform:rotate(0);}
 	to	{transform:rotate(360deg);}
+}
+
+@keyframes twinkle {
+	from	{color:white;}
+	to	{color:royalblue;}
 }
