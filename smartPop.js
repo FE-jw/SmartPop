@@ -1,11 +1,11 @@
 /**
  * Version: 1
- * Web: https://fe-jw.github.io/smartPop
- * Github: https://github.com/FE-jw/smartPop
+ * Web: https://fe-jw.github.io/SmartPop
+ * Github: https://github.com/FE-jw/SmartPop
  * Released: 2022-09-16
 */
 
-NodeList.prototype.smartPop = function(options){
+NodeList.prototype.SmartPop = function(options){
 	if(window.NodeList && !NodeList.prototype.forEach){
 		NodeList.prototype.forEach = Array.prototype.forEach;
 	}

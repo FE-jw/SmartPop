@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/*! Author: JW 2022-09-16 */
+/*! Author: JW 2022-09-16. Edit: 2022-10-16 */
 *	{margin:0;padding:0;}
 html	{height:100%;font-size:10px;-webkit-text-size-adjust:none;}
 body	{height:100%;line-height:1.2;font-size:2rem;font-family:"Roboto-Regular","NanumSquareR",sans-serif;color:#fff;background-color:#000;-webkit-overflow-scrolling:touch;}
@@ -22,7 +22,7 @@ body.onLoad .container, body.onLoad .footer, body.onLoad .header	{visibility:ini
 .sp-wrap	{overflow:hidden;min-width:360px;}
 .sp-wrap br[data-break-2]	{display:none;}
 .sp-wrap br[data-break-1]	{display:block;}
-.sp-wrap:before	{content:"";opacity:0;width:100vw;height:100vh;position:fixed;left:0;top:0;background:url("https://cdn.jsdelivr.net/gh/fe-jw/smartPop/img/bg_sp.jpg") repeat 50% 50%;background-size:960px auto;z-index:-10;}
+.sp-wrap:before	{content:"";opacity:0;width:100vw;height:100vh;position:fixed;left:0;top:0;background:url("https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/img/bg_sp.jpg") repeat 50% 50%;background-size:960px auto;z-index:-10;}
 .sp-wrap .point	{color:#4169e1;}
 .sp-wrap .link-default	{display:flex;justify-content:center;align-items:center;width:160px;height:45px;margin:0 auto;padding:0 10px;border-width:1px;border-style:solid;border-color:#fff;font-family:"Roboto-Light","NanumSquareL",sans-serif;font-size:1.5rem;text-align:center;background-color:rgba(255,255,255,0.1);transition:all 0.5s ease;box-sizing:border-box;}
 .sp-wrap .link-default:hover	{border-color:#4169e1;background-color:rgba(65,105,225,0.2);}

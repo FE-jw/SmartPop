@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
 <title>Smart Layer Popup</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/favicon.ico">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/favicon.ico">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/css/font.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/css/highlight-material-11.4.0.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/css/style.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/css/highlight-material-11.4.0.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/css/style.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/STA/Ver1.4/sta.min.css">
 </head>
 
@@ -66,21 +66,21 @@
 						<h3 class="step-tit">Add JS</h3>
 						<div class="code-wrap">
 							<pre><code class="html">&lt;!-- Don't add my CDN in your project. I recommend adding it to your CDN --&gt;
-&lt;script src="<a href="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/smartPop.min.js" target="_blank">https://cdn.jsdelivr.net/gh/fe-jw/smartPop/smartPop.min.js</a>"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="<a href="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/SmartPop.min.js" target="_blank">https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/SmartPop.min.js</a>"&gt;&lt;/script&gt;</code></pre>
 						</div>
 					</li>
 					<li data-sta>
 						<h3 class="step-tit">Initialize</h3>
 						<div class="code-wrap">
 							<pre><code class="javascript">//Be sure to use querySelectorAll()
-document.querySelectorAll('.your-class').smartPop({
+document.querySelectorAll('.your-class').SmartPop({
 	popClose: 'your-close',	//Close button class name (default is btn-close)
 	cssModeClass: 'on'	//Popup none or block class name (if you do not write down the option, handle none/block with style property)
 });</code></pre>
 						</div>
 					</li>
 				</ol>
-				<a href="https://github.com/FE-jw/smartPop" class="link-default arrow" target="_blank" data-sta>View on Github</a>
+				<a href="https://github.com/FE-jw/SmartPop" class="link-default arrow" target="_blank" data-sta>View on Github</a>
 			</div>
 		</div>
 	</div>
@@ -101,13 +101,13 @@ document.querySelectorAll('.your-class').smartPop({
 		<button type="button" class="btn-close">Close Popup</button>
 	</div>
 </div>
-<script src="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/js/highlight-8.7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/js/highlight-8.7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fe-jw/STA/Ver1.4/sta.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/smartPop.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/SmartPop.min.js"></script>
 <script>
 hljs.initHighlightingOnLoad();
 
-document.querySelectorAll('.btn-smartpop').smartPop();
+document.querySelectorAll('.btn-smartpop').SmartPop();
 
 window.addEventListener('load', function(){
 	//Loading

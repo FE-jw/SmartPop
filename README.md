@@ -1,6 +1,6 @@
-![Smart Layer Popup](/img/SP_logo.jpg)
+![Smart Layer Popup](https://fe-jw.github.io/SmartPop/img/SP_logo.jpg)
 
-# **Smart Layer Popup [Demo](https://fe-jw.github.io/smartPop)**
+# **Smart Layer Popup [Demo](https://fe-jw.github.io/SmartPop)**
 
 This is a smart layer popup plugin.  
 It is useful to expose a particular layer popup when clicking an element.
@@ -23,12 +23,12 @@ It is useful to expose a particular layer popup when clicking an element.
 
 ```html
 <!-- Don't add my CDN in your project. I recommend adding it to your CDN -->
-<script src="https://cdn.jsdelivr.net/gh/fe-jw/smartPop/smartPop.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/SmartPop.min.js"></script>
 ```
 
 ```javascript
 //Be sure to use querySelectorAll()
-document.querySelectorAll('.your-class').smartPop({
+document.querySelectorAll('.your-class').SmartPop({
 	popClose: 'your-close',	//Close button class name (default is btn-close)
 	cssModeClass: 'on'	//Popup none or block class name (if you do not write down the option, handle none/block with style property)
 });
@@ -42,5 +42,7 @@ document.querySelectorAll('.your-class').smartPop({
 * When you close the popup, the focus moves to the button you pressed, allowing you to continue searching for information.
 
 ## **Change Log**
+* 221016
+	* Change Repository, files, method name(smartPop => SmartPop)
 * 220916
 	* Released Ver 1
