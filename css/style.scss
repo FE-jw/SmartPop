@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/*! Author: JW 2022-09-16. Edit: 2022-10-16 */
+/*! Author: JW 2022-09-16. Edit: 2022-11-28 */
 $font: 'Roboto-Regular', 'NanumSquareR', sans-serif;
 $font-light: 'Roboto-Light', 'NanumSquareL', sans-serif;
 $font-bold: 'Roboto-Bold', 'NanumSquareExtraBold', sans-serif;
@@ -22,8 +22,10 @@ li, dd	{list-style:none;}
 .flex_item	{display:block;width:100%;}
 .skip-content	{position:absolute;left:0;top:-100px;}
 .skip-content:focus	{display:block;width:100%;top:0;line-height:50px;font-weight:bold;color:#fff;text-align:center;background-color:$symbol-color;z-index:1000;}
-::-webkit-scrollbar	{width:4px;height:2px;background-color:rgba(255, 255, 255, 0.05);}
-::-webkit-scrollbar-thumb	{background-color:$symbol-color;}
+::-webkit-scrollbar	{width:10px;height:4px;background-color:rgba(255, 255, 255, 0.05);}
+::-webkit-scrollbar-thumb	{border-radius:50em;background-color:$symbol-color;}
+pre	{min-width:0;padding:10px 0;overflow-x:auto;}
+pre code.hljs	{overflow-x:visible;}
 
 //Loading
 body	{
@@ -78,7 +80,7 @@ body	{
 		.how-to-start .step-tit:before	{content:'· ';color:$symbol-color;}
 		.how-to-start .code-wrap	{padding:20px;border-width:1px;border-style:solid;border-color:$symbol-color;font-size:1.2rem;background-color:rgba(0, 0, 0, 0.5);box-sizing:border-box;}
 		.code-list	{display:flex;justify-content:center;flex-wrap:wrap;width:100%;}
-		.code-list [class^='item-']	{display:flex;align-items:center;min-width:100px;min-height:100px;margin:10px;padding:0 10px;border-width:1px;border-style:solid;border-color:$symbol-color;font-size:1.2rem;background-color:rgba(0, 0, 0, 0.5);box-sizing:border-box;}
+		.code-list [class^='item-']	{display:flex;align-items:center;min-width:100px;min-height:100px;margin:10px;padding:10px;border-width:1px;border-style:solid;border-color:$symbol-color;font-size:1.2rem;background-color:rgba(0, 0, 0, 0.5);box-sizing:border-box;}
 	}
 
 	.footer	{padding:40px 0 20px;
@@ -123,7 +125,7 @@ body	{
 			.how-to-start li	{margin-bottom:30px;}
 			.how-to-start .step-tit	{font-size:2.5rem;}
 			.how-to-start .code-wrap	{font-size:1.5rem;}
-			.code-list [class^='item-']	{min-width:200px;min-height:200px;border-width:2px;font-size:1.5rem;}
+			.code-list [class^='item-']	{min-width:200px;max-width:720px;min-height:200px;border-width:2px;font-size:1.5rem;}
 		}
 	}
 
@@ -164,7 +166,7 @@ body	{
 			.how-to-start li	{margin-bottom:40px;}
 			.how-to-start .step-tit	{font-size:3.0rem;}
 			.how-to-start .code-wrap	{font-size:2.0rem;}
-			.code-list [class^='item-']	{min-width:300px;min-height:300px;padding:0 20px;border-width:2px;font-size:2.0rem;}
+			.code-list [class^='item-']	{min-width:300px;max-width:1000px;min-height:300px;padding:20px;border-width:2px;font-size:2.0rem;}
 		}
 
 		.footer	{padding:60px 0 30px;
