@@ -9,12 +9,12 @@ It is useful to expose a particular layer popup when clicking an element.
 
 ## **How To Use**
 
-1. When applying as a tag: set the ID value of the popup to be connected to href
+1. When applying as `<a>` tag: set the ID value of the popup to be connected to href
 	```html
 	<a href="#SMARTpop-1" class="your-class">...</a>
 	```
 
-2. When applying as a button tag: set the ID value of the popup to be connected to data-smartpop _(other tags are also possible)_
+2. When applying as a `<button>` tag: set the ID value of the popup to be connected to data-smartpop _(other tags are also possible)_
 	```html
 	<button type="button" class="your-class" data-smartpop="#SMARTpop-2">...</button>
 	```
@@ -42,7 +42,9 @@ document.querySelectorAll('.your-class').SmartPop({
 * When you close the popup, the focus moves to the button you pressed, allowing you to continue searching for information.
 
 ## **Change Log**
+* 221202
+	* When tags other than `<a>` and `<button>` are used, tabindex and role attributes are added to enable keyboard access. I recommend you use the `<button>` tag.
 * 221016
-	* Change Repository, files, method name(smartPop => SmartPop)
+	* Change Repository, files, method name(smartPop => SmartPop).
 * 220916
 	* Released Ver 1

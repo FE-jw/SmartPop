@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/fe-jw.github.io/css/font.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/css/highlight-material-11.4.0.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/css/style.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/STA/Ver1.4/sta.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fe-jw/STA/Ver1.5/sta.min.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 		<div class="header-wrap">
 			<h1 class="main-tit" data-sta>
 				<span class="name">Smart Layer Popup</span>
-				<span class="ver">Ver 1</span>
+				<span class="ver">Ver 1.1.0</span>
 			</h1>
 			<p class="main-desc">
 				<span class="desc" data-sta data-sta-delay="300">Layer Popup Toggle Plugin</span>
@@ -34,6 +34,7 @@
 				<div class="btn-wrap">
 					<a href="#SMARTpop-1" class="btn-smartpop" data-sta>Connected popup ID: #SMARTpop-1</a>
 					<button class="btn-smartpop" data-smartpop="#SMARTpop-2" data-sta data-sta-delay="200">Connected popup ID: #SMARTpop-2</button>
+					<div class="btn-smartpop" data-smartpop="#SMARTpop-3" data-sta data-sta-delay="300">Connected popup ID: #SMARTpop-3</div>
 				</div>
 				<div class="code-list">
 					<div class="item-1" data-sta>
@@ -44,6 +45,11 @@
 					<div class="item-2" data-sta data-sta-delay="200">
 						<div class="flex_item">
 							<pre><code class="html">&lt;button class="your-class" data-smartpop="#SMARTpop-2"&gt;...&lt;/button&gt;</code></pre>
+						</div>
+					</div>
+					<div class="item-3" data-sta data-sta-delay="200">
+						<div class="flex_item">
+							<pre><code class="html">&lt;div class="your-class" data-smartpop="#SMARTpop-3"&gt;...&lt;/div&gt;</code></pre>
 						</div>
 					</div>
 				</div>
@@ -57,7 +63,8 @@
 						<h3 class="step-tit">Add Markup</h3>
 						<div class="code-wrap">
 							<pre><code class="html">&lt;a href="#SMARTpop-1" class="your-class"&gt;...&lt;/a&gt;
-&lt;button class="your-class" data-smartpop="#SMARTpop-2"&gt;...&lt;/button&gt;</code></pre>
+&lt;button class="your-class" data-smartpop="#SMARTpop-2"&gt;...&lt;/button&gt;
+&lt;div class="your-class" data-smartpop="#SMARTpop-3"&gt;...&lt;/div&gt; &lt;!-- not recommended --&gt;</code></pre>
 						</div>
 					</li>
 					<li data-sta>
@@ -89,19 +96,33 @@ document.querySelectorAll('.your-class').SmartPop({
 </div>
 <div id="SMARTpop-1" class="smart-pop" style="display:none;">
 	<div class="pop-layer">
-		<span class="pop-txt">#SMARTPOP-1.<br><br>Continue pressing<br>the Tab key.<br>You don't lose focus<br>on the popup<br>until you close it.<br><br>Pressing the ESC key<br>closes the popup.</span>
+		<span class="pop-txt">#SMARTpop-1.<br><br>Continue pressing<br>the Tab key.<br>You don't lose focus<br>on the popup<br>until you close it.<br><br>Pressing the ESC key<br>closes the popup.</span>
 		<button type="button" class="btn-close">Close Popup</button>
 	</div>
 </div>
 <div id="SMARTpop-2" class="smart-pop" style="display:none;">
 	<div class="pop-layer">
-		<span class="pop-txt">#SMARTPOP-2.<br><br>Continue pressing<br>the Tab key.<br>You don't lose focus<br>on the popup<br>until you close it.<br><br>Pressing the ESC key<br>closes the popup.</span>
+		<span class="pop-txt">#SMARTpop-2.<br><br>Continue pressing<br>the Tab key.<br>You don't lose focus<br>on the popup<br>until you close it.<br><br>Pressing the ESC key<br>closes the popup.</span>
+		<button type="button" class="btn-close">Close Popup</button>
+	</div>
+</div>
+<div id="SMARTpop-3" class="smart-pop" style="display:none;">
+	<div class="pop-layer">
+		<span class="pop-txt">#SMARTpop-3.<br><br>Continue pressing<br>the Tab key.<br>You don't lose focus<br>on the popup<br>until you close it.<br><br>Pressing the ESC key<br>closes the popup.</span>
 		<button type="button" class="btn-close">Close Popup</button>
 	</div>
 </div>
 <script src="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/js/highlight-8.7.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fe-jw/STA/Ver1.4/sta.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fe-jw/SmartPop/SmartPop.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fe-jw/STA/Ver1.5/sta.min.js"></script>
+<script>
+/**
+ * Version: 1.1.0
+ * Web: https://fe-jw.github.io/SmartPop
+ * Github: https://github.com/FE-jw/SmartPop
+ * Released: 2022-12-02
+*/
+NodeList.prototype.SmartPop=function(e){window.NodeList&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=Array.prototype.forEach);var o={btns:this,popClose:"btn-close",cssModeClass:""};e&&(o.popClose=void 0!==e.popClose?e.popClose:o.popClose,o.cssModeClass=void 0!==e.cssModeClass?e.cssModeClass:o.cssModeClass);var s=function(){o.btns.forEach(function(e){function s(e){"a"===c&&e.preventDefault(),o.cssModeClass?a.classList.add(o.cssModeClass):a.style.display="block",a.style.outline="none",a.tabIndex=0,a.focus()}function t(){a.removeAttribute("tabindex"),o.cssModeClass?a.classList.remove(o.cssModeClass):a.style.display="none",a.style.outline="",e.focus()}var n=(e.hash||e.dataset.smartpop).replace("#",""),a=document.getElementById(n),c=e.tagName.toLowerCase();"button"!=c&&"a"!=c&&(e.tabIndex=0,e.style.cursor="pointer",e.addEventListener("keydown",function(o){13==o.keyCode&&e.click()}));var d=o.popClose||"btn-close";a.querySelector("."+d).addEventListener("click",function(){t()}),a.addEventListener("keydown",function(e){27==e.keyCode&&t(),a.querySelector("."+d).addEventListener("keydown",function(e){9==e.keyCode&&(e.preventDefault(),a.focus())})}),e.addEventListener("click",function(e){s(e)})})};s()};
+</script>
 <script>
 hljs.initHighlightingOnLoad();
 
@@ -112,7 +133,9 @@ window.addEventListener('load', function(){
 	setTimeout(function(){
 		window.scrollTo(0, 0);
 		document.body.classList.add('onLoad');
-		document.querySelectorAll('[data-sta]').STA();
+		document.querySelectorAll('[data-sta]').STA({
+			defaultOffset: 0.3
+		});
 	}, 500);
 });
 

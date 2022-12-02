@@ -1,8 +1,8 @@
 /**
- * Version: 1
+ * Version: 1.1.0
  * Web: https://fe-jw.github.io/SmartPop
  * Github: https://github.com/FE-jw/SmartPop
- * Released: 2022-09-16
+ * Released: 2022-12-02
 */
 
 NodeList.prototype.SmartPop = function(options){
@@ -12,15 +12,32 @@ NodeList.prototype.SmartPop = function(options){
 
 	var settings = {
 		btns: this,
-		popClose: typeof options !== 'undefined' ? options.popClose : 'btn-close',
-		cssModeClass: typeof options !== 'undefined' ? options.cssModeClass : ''
+		popClose: 'btn-close',
+		cssModeClass: ''
 	};
+
+	if(options){
+		settings.popClose = typeof options.popClose != 'undefined' ? options.popClose : settings.popClose;
+		settings.cssModeClass = typeof options.cssModeClass != 'undefined' ? options.cssModeClass : settings.cssModeClass;
+	}
 
 	var onInit = function(){
 		settings.btns.forEach(function(e){
 			var pop_id = (e.hash || e.dataset.smartpop).replace('#', '');
 			var pop = document.getElementById(pop_id);
 			var tag = e.tagName.toLowerCase();
+
+			//A11Y
+			if(tag != 'button' && tag != 'a'){
+				e.tabIndex = 0;
+				e.style.cursor = 'pointer';
+
+				e.addEventListener('keydown', function(k){
+					if(k.keyCode == 13){
+						e.click();
+					}
+				});
+			}
 
 			//Open
 			function openPop(e){
