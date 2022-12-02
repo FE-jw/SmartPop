@@ -43,7 +43,7 @@ document.querySelectorAll('.your-class').SmartPop({
 
 ## **Change Log**
 * 221202 v1.1.0
-	* When tags other than `<a>` and `<button>` are used, tabindex and role attributes are added to enable keyboard access. I recommend you use the `<button>` tag.
+	* When tags other than `<a>` and `<button>` are used, `tabindex` and `role` attributes are added to enable keyboard access. I recommend you use the `<button>` tag.
 * 221016 v1.0.0
 	* Change Repository, files, method name(smartPop => SmartPop).
 * 220916 v1.0.0
