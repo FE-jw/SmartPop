@@ -42,9 +42,9 @@ document.querySelectorAll('.your-class').SmartPop({
 * When you close the popup, the focus moves to the button you pressed, allowing you to continue searching for information.
 
 ## **Change Log**
-* 221202
+* 221202 v1.1.0
 	* When tags other than `<a>` and `<button>` are used, tabindex and role attributes are added to enable keyboard access. I recommend you use the `<button>` tag.
-* 221016
+* 221016 v1.0.0
 	* Change Repository, files, method name(smartPop => SmartPop).
-* 220916
+* 220916 v1.0.0
 	* Released Ver 1
