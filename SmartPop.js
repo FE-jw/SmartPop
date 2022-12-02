@@ -30,6 +30,7 @@ NodeList.prototype.SmartPop = function(options){
 			//A11Y
 			if(tag != 'button' && tag != 'a'){
 				e.tabIndex = 0;
+				e.role = 'button';
 				e.style.cursor = 'pointer';
 
 				e.addEventListener('keydown', function(k){
